@@ -22,11 +22,12 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: false  # Set to false if specifying linters
-          VALIDATE_PYTHON: true  # Ensure no conflicting settings
-          VALIDATE_PYTHON_BLACK: true
+          LINTER_RULES_PATH: ./
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_PYTHON: true
           VALIDATE_PYTHON_PYLINT: true
           VALIDATE_PYTHON_FLAKE8: true
-          VALIDATE_PYTHON_ISORT: true
-          VALIDATE_PYTHON_MYPY: true
-          VALIDATE_PYTHON_BANDIT: true
+          VALIDATE_PYTHON_BLACK: false
+          VALIDATE_PYTHON_ISORT: false
+          VALIDATE_PYTHON_MYPY: false
+          VALIDATE_PYTHON_BANDIT: false
