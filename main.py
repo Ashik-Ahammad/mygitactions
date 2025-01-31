@@ -1,9 +1,10 @@
-def hello():
-    print("hi")
+ def hello():
+     print("hi")
+ 
 
+ def bye():
 
-def bye():
-    print("bye")
+     print("bye")
 
-
-print(hello())
+ 
+  print(hello())
