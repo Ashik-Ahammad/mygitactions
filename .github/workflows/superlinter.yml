@@ -1,33 +1,18 @@
 name: Super-Linter
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: push
 
 jobs:
   super-lint:
-    name: Lint codebase
+    name: Lint code base
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Run Super-Linter
-        uses: github/super-linter@v5
+        uses: github/super-linter@v3
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: ./
-          VALIDATE_ALL_CODEBASE: true
-          VALIDATE_PYTHON: true
-          VALIDATE_PYTHON_PYLINT: true
-          VALIDATE_PYTHON_FLAKE8: true
-          VALIDATE_PYTHON_BLACK: false
-          VALIDATE_PYTHON_ISORT: false
-          VALIDATE_PYTHON_MYPY: false
-          VALIDATE_PYTHON_BANDIT: false
